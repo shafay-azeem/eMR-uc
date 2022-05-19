@@ -1,0 +1,2 @@
+global.endDate = "";
+global.startDate = "";
