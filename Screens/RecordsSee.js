@@ -1,5 +1,5 @@
 import React, {Component, useState,useEffect } from 'react';
-import { Text, View, TouchableOpacity,TextInput, FlatList, Image,ActivityIndicator,Modal}  from 'react-native';
+import { Text, View, TouchableOpacity,TextInput, FlatList, Image,ActivityIndicator,Modal,Dimensions}  from 'react-native';
 import UnitClerkHeader from './AllHeaders/UnitClerkHeader';
 import PatientHeader from './AllHeaders/PatientHeader';
 import Header from './Header';
@@ -13,6 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
 // import ImageViewer from 'react-native-image-zoom-viewer';
 // import ImageView from 'react-native-image-view';
+import ImageZoom from 'react-native-image-pan-zoom';
 
 
 function Item({item,patient}) {
@@ -22,8 +23,8 @@ function Item({item,patient}) {
     console.log(item.patientId,"king")
     console.log(item.imgPath,"image2222")
     const [active , setactive] = useState(false);
-    let  image=item.imgPath
-
+ 
+    let image = item.imgPath
     console.log(image)
 
 
@@ -41,26 +42,35 @@ function Item({item,patient}) {
           >
         
           
-          <View style={styles.centeredView}>
-            <View style={styles.modalView1}>
+          {/* <View style={styles.centeredView}>
+            <View style={styles.modalView1}> */}
 
 
-           <Image 
+           {/* <Image 
            style={styles.tinyLogo1}
            source={{uri:item.imgPath}}>
              
-           </Image>
-  
-                <TouchableOpacity
-                style={[styles.smallRoundedBlueRounded,{width:'60%',marginTop:10}]}
+           </Image> */}
+           <View style={{marginTop:40,padding:10}}>
+                 <ImageZoom cropWidth={Dimensions.get('window').width}
+                       cropHeight={Dimensions.get('window').height}
+                       imageWidth={500}
+                       imageHeight={600}>
+                <Image style={{width:'100%', height:"90%"}}
+                       source={{uri:image}}/>
+     
+            </ImageZoom>
+            </View>
+            
+            {/* <TouchableOpacity
+                style={[styles.smallRoundedBlueRounded,{width:'60%',marginTop:10,}]}
 
                 onPress={()=>{setactive(!active)}}
               >
                <Text style={styles.Button_text_styling}>BACK</Text>
-                </TouchableOpacity>
-     
-            </View>
-          </View>
+                </TouchableOpacity> */}
+            {/* </View>
+          </View> */}
         </Modal>
 
         <TouchableOpacity style={{}}
@@ -76,7 +86,9 @@ function Item({item,patient}) {
 
         
       />
+
       
+ 
             
    
         </TouchableOpacity>

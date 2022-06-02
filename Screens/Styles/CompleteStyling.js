@@ -469,6 +469,12 @@ TextForInsideRowSidebySide:{
       fontSize: 25
 
 
+    },      mediumText1: {
+      fontFamily: 'Montserrat-Medium',
+      color: 'black',
+      fontSize: 18
+
+
     },  
 
     dollarIcon:{
@@ -696,13 +702,13 @@ height:"80%",
   },
   modalView1: {
     flex:1,
-    margin: 20,
+    margin: 30,
     backgroundColor: "white",
     borderRadius: 10,
-    padding: 35,
+
     width:"45%",
-    height:500,
-    alignItems: "center",
+  
+    // alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -712,9 +718,7 @@ height:"80%",
 
 
 
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
+  
   },
   modalView: {
     margin: 20,

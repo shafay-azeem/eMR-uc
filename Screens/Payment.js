@@ -155,7 +155,7 @@ const getCurrentTime = () => {
           
             <View style = {{flexDirection: 'column',alignItems: 'center',marginRight:10}}>
             <Text style={{ color: 'black',alignSelf: 'flex-start',fontSize:20, fontFamily:"Montserrat-Regular"}}>Fee</Text>
-            <Text style={{color: 'black', alignSelf: 'flex-start',fontFamily:"Montserrat-Regular",fontSize:18,color:'#3FB39B',marginRight:20,marginTop:5}}>{doctorInfo.initialFees} Rs</Text>
+            <Text style={{color: 'black', alignSelf: 'flex-start',fontFamily:"Montserrat-Regular",fontSize:18,color:'#3FB39B',marginRight:20,marginTop:5}}>{doctorInfo.initialFees} PKR</Text>
        
             </View>
             <View style = {{flexDirection: 'column',alignItems: 'center',marginRight:10}}>
@@ -203,7 +203,7 @@ const getCurrentTime = () => {
 
                 <View style = {{flexDirection: 'row'}}>
                 <Text style = {[{alignSelf:'flex-start',marginTop:10,fontSize:15,color:'black',fontFamily:"Montserrat-Regular"}]}>Issued by: </Text>
-                <Text style = {[{alignSelf:'flex-start',marginTop:7,fontFamily:"Montserrat-SemiBold",fontSize:20,color:'#3FB39B'}]}>{appDetails.providerName}</Text>
+                <Text style = {[{alignSelf:'flex-start',marginTop:7,fontFamily:"Montserrat-SemiBold",fontSize:20,color:'#3FB39B'}]}>AFMC</Text>
 
                 </View>
                 <View style = {{flexDirection: 'row'}}>
@@ -214,13 +214,13 @@ const getCurrentTime = () => {
 
                 <View style = {{flexDirection: 'row'}}>
                 <Text style = {[{alignSelf:'flex-start',marginTop:10,fontSize:15,color:'black',fontFamily:"Montserrat-Regular"}]}>Patient Name: </Text>
-                <Text style = {[{alignSelf:'flex-start',marginTop:7,fontFamily:"Montserrat-SemiBold",fontSize:20,color:'#3FB39B'}]}>{appDetails.patientName}</Text>
+                <Text style = {[{alignSelf:'flex-start',marginTop:7,fontFamily:"Montserrat-SemiBold",fontSize:20,color:'#3FB39B'}]}>{appDetails.patientName}{" "}{appDetails.lastName}</Text>
 
                 </View>
 
                 <View style = {{flexDirection: 'row'}}>
-                <Text style = {[{alignSelf:'flex-start',marginTop:10,fontSize:15,color:'black',fontFamily:"Montserrat-Regular"}]}>Teleconsultation Payment: </Text>
-                <Text style = {[{alignSelf:'flex-start',marginTop:7,fontFamily:"Montserrat-SemiBold",fontSize:20,color:'#3FB39B'}]}>{doctorInfo.initialFees}</Text>
+                <Text style = {[{alignSelf:'flex-start',marginTop:10,fontSize:15,color:'black',fontFamily:"Montserrat-Regular"}]}>Consultation Payment: </Text>
+                <Text style = {[{alignSelf:'flex-start',marginTop:7,fontFamily:"Montserrat-SemiBold",fontSize:20,color:'#3FB39B'}]}>{doctorInfo.initialFees} PKR</Text>
 
                 </View>
 
@@ -294,7 +294,7 @@ const getCurrentTime = () => {
               source={require('../images/dollar.png')}
             />
             </View> */}
-            <Text style= {{color: 'black',justifyContent:'center'}}>{doctorInfo.initialFees}</Text>
+            <Text style= {{color: 'black',justifyContent:'center'}}>{doctorInfo.initialFees} PKR</Text>
             
             </View>
             

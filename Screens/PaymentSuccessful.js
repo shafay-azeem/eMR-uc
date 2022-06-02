@@ -21,6 +21,8 @@ import { useNavigation } from '@react-navigation/native';
     const { slotDetails } = route.params;
     const { doctorInfo } = route.params;
     const { appDetails } = route.params;
+    
+
     let appointmentId = appDetails.appointmentId
   
     const success = async () => {
@@ -71,7 +73,7 @@ const getCurrentTime = () => {
   let hours = (today.getHours() < 10 ? '0' : '') + today.getHours();
   let minutes = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
   let seconds = (today.getSeconds() < 10 ? '0' : '') + today.getSeconds();
-  return hours + ':' + minutes + ':' + seconds;
+  return hours + ':' + minutes ;
 }
 
     return (
@@ -111,7 +113,7 @@ const getCurrentTime = () => {
           
             <View style = {{flexDirection: 'column',alignItems: 'center',marginRight:10}}>
             <Text style={{ color: 'black',alignSelf: 'flex-start',fontSize:20, fontFamily:"Montserrat-Regular"}}>Fee</Text>
-            <Text style={{color: 'black', alignSelf: 'flex-start',fontSize:18,color:'#3FB39B',marginRight:20,fontFamily:"Montserrat-Regular"}}>{doctorInfo.initialFees} Rs</Text>
+            <Text style={{color: 'black', alignSelf: 'flex-start',fontSize:18,color:'#3FB39B',marginRight:20,fontFamily:"Montserrat-Regular"}}>{doctorInfo.initialFees} PKR</Text>
        
             </View>
             <View style = {{flexDirection: 'column',alignItems: 'center',marginRight:10}}>
@@ -161,7 +163,7 @@ const getCurrentTime = () => {
 
                 <View style = {{flexDirection: 'row'}}>
                 <Text style = {[{marginTop:10,fontSize:15,color:'black',fontFamily:"Montserrat-Regular"}]}>Patient Name: </Text>
-                <Text style = {[{marginTop:7,fontSize:20,color:'#3FB39B',fontFamily:"Montserrat-SemiBold"}]}>{appDetails.patientName}</Text>
+                <Text style = {[{marginTop:7,fontSize:20,color:'#3FB39B',fontFamily:"Montserrat-SemiBold"}]}>{appDetails.patientName}{" "}{appDetails.lastName}</Text>
 
                 </View>
                 
@@ -178,8 +180,8 @@ const getCurrentTime = () => {
                 </View>
 
                 <View style = {{flexDirection: 'row'}}>
-                <Text style = {[{marginTop:10,fontSize:15,color:'black',fontFamily:"Montserrat-Regular"}]}>Teleconsultation Payment: </Text>
-                <Text style = {[{marginTop:7,fontSize:20,color:'#3FB39B',fontFamily:"Montserrat-SemiBold"}]}>{doctorInfo.initialFees}</Text>
+                <Text style = {[{marginTop:10,fontSize:15,color:'black',fontFamily:"Montserrat-Regular"}]}>Consultation Payment: </Text>
+                <Text style = {[{marginTop:7,fontSize:20,color:'#3FB39B',fontFamily:"Montserrat-SemiBold"}]}>{doctorInfo.initialFees} PKR</Text>
 
                 </View>
                 
@@ -200,7 +202,7 @@ const getCurrentTime = () => {
                 <Text style = { [{flexDirection: 'row',alignSelf:'flex-end',fontFamily:"Montserrat-Regular",fontSize:20,color:'black'}]}>Amount Payable: </Text>
                 <View style = {{flexDirection: 'row',borderColor: 'orange' ,borderWidth:2, borderRadius: 15, alignItems: 'center',}}>
             
-            <Text style= {{textAlign: 'right',color: 'black',fontFamily:"Montserrat-SemiBold",padding:5,fontSize:15}}>{doctorInfo.initialFees} </Text>
+            <Text style= {{textAlign: 'right',color: 'black',fontFamily:"Montserrat-SemiBold",padding:5,fontSize:15}}>{doctorInfo.initialFees} PKR</Text>
             
             </View>
             
@@ -217,7 +219,12 @@ const getCurrentTime = () => {
                 </View>
 
                 <TouchableOpacity style={[styles.buttonGeneral,{marginBottom:1000,width:"28%"}]}
-              onPress={() =>navigation.navigate("HomeScreen")}
+              onPress={() =>navigation.navigate("invoicehtml",{
+                doctorInfo: doctorInfo,
+                slotDetails: slotDetails,
+                patient: patient,
+                appDetails: appDetails
+              })}
               > 
               <Text style={styles.Button_text_styling}>
               PRINTED INVOICE</Text>

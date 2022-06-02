@@ -38,6 +38,9 @@ const RegistrationScreen = ({ navigation }) => {
     let [gender, setgender] = useState('Male');
     let [Qrcode, setQrcode] = useState('');
     let [date, setDate] = useState('');
+    let [sehatsafarnumber, setsehatsafarnumber] = useState('');
+
+    
     let [isDatePickerVisible, setDatePickerVisibility] = useState(false);
     console.log(date,'date');
     // console.log(getDate(),'kill')
@@ -298,7 +301,7 @@ const RegistrationScreen = ({ navigation }) => {
               },
               {
                   "attributeType": "sehat-safar-number-patient",
-                  "value": timestamp
+                  "value": sehatsafarnumber
               },
               {
                   "attributeType": "types-of-visits-patient",
@@ -314,7 +317,7 @@ const RegistrationScreen = ({ navigation }) => {
                   "middleName": MiddleName
               }
           ],
-          "uuid": uuid
+          "uuid": timestamp
       }
       fetch('http://emr.daldaeagleseye.com/emrappointment/patient', {
         method: 'POST', // or 'PUT'
@@ -408,16 +411,13 @@ const RegistrationScreen = ({ navigation }) => {
 
       <View style={styles.Side_by_side_EditText}>
       <View style={styles.inputWrap}>
-          <Text style={styles.EdittextHeading}>Family Id</Text>
+          <Text style={styles.EdittextHeading}>Sehat Safar Number</Text>
           <TextInput  
               style={styles.Edittext}
-              value={epochlengthconverter()}
-              color="black"
-              editable={false}
-              selectTextOnFocus={false}
-              placeholder="Auto Generate" 
+         
+              placeholder="Enter Sehat Safar Number" 
               placeholderTextColor="#30A28C"
-              // onChangeText={(userName) => setCNIC_Number(userName)}
+              onChangeText={(sehatsafarnumber) => setsehatsafarnumber(sehatsafarnumber)}
               />
                </View>
          

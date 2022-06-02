@@ -278,7 +278,7 @@ function Item({ item }) {
    let tempDate = date.toString().split(' ');
     console.log(tempDate)
     let month = "";
-    if(tempDate[1] == "Apr"){
+    if(tempDate[1] == "Jan"){
       month = "01"
     }
     if(tempDate[1] == "Feb"){
@@ -424,12 +424,11 @@ const loadUserData = () => {
           
         
             <UnitClerkHeader/>
-            <View style= {[styles.headerbalance,{}]}>
+            {/* <View style= {[styles.headerbalance,{}]}>
 
               <View style={{width:'33%', alignItems: 'center'}}>
-              {/* <TouchableOpacity */}
-            {/* onPress={() =>navigation.navigate("HomeScreen")}> */}
-                <Text style={{   fontFamily:"Montserrat-Bold",marginLeft:57,
+ 
+                <Text style={{   fontFamily:"Montserrat-Bold",marginLeft:7,
         marginTop:10,
         color:"#3FB39B"}}
           onPress={()=>{setactive(!active)}}>Opening Balance</Text>
@@ -442,7 +441,7 @@ const loadUserData = () => {
                   value={opening}
                   placeholderTextColor="#3FB39B"
                      onChangeText={ (Phone_Number)=> setPhone_Number(Phone_Number)}/> 
-{/* </TouchableOpacity> */}
+
               </View>
 
               <View style={{width:'33%', alignItems: 'center'}}>
@@ -482,11 +481,11 @@ const loadUserData = () => {
         
  
         
-            </View>
+            </View> */}
 
 
-
-            <View style={[styles.containerForButton]}>
+    
+            <View style={[styles.containerForButton,{marginTop:30}]}>
             <TouchableOpacity style={[styles.button_Side_by_Side,{width:300}]}
               onPress={() =>navigation.navigate("RegistrationScreen")}
               > 
@@ -506,7 +505,14 @@ const loadUserData = () => {
               > 
               <Text style={styles.Button_text_styling}>
               SEARCH PATIENT</Text>
+
             </TouchableOpacity>
+            {/* <TouchableOpacity style={[styles.button_Side_by_Side,{width:230}]}
+              onPress={() =>navigation.navigate("getandcreate")}
+              > 
+              <Text style={styles.Button_text_styling}>
+              BALANCE</Text>
+            </TouchableOpacity> */}
     </View>
     <AppointmentHeading name="Upcomming Appointments"/>
     <View style={[{width:160,justifyContent:'center',  alignItems: 'center',  alignSelf:'center'}]}>
@@ -522,7 +528,6 @@ const loadUserData = () => {
             color="#000000"
             placeholderTextColor="#30A28C"
             placeholder="Date"
-              // onChangeText={DevSettings.reload()}
 />
 <DateTimePickerModal
         isVisible={isDatePickerVisible}

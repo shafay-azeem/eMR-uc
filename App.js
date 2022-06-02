@@ -19,7 +19,7 @@ import SearchDoctor from "./Screens/SearchDoctor";
 import ImagesRecords from "./Screens/ImagesRecords";
 import MoreImagesAndRecord from "./Screens/MoreImagesAndRecord";
 import UpdatePatientProfile from "./Screens/UpdatePatientProfile";
-
+import OpeningBalance from "./Screens/OpeningBalance";
 import SelectDoc from "./Screens/SelectDoc";
 import SelectSlot from "./Screens/SelectSlot";
 import Cash from "./Screens/Cash";
@@ -29,7 +29,7 @@ import Payment from "./Screens/Payment";
 import SelectDocbooking from "./Screens/SelectDocbooking";
 
 import modal from "./Screens/modal";
-
+import Closingbalance from "./Screens/Closingbalance";
 import ConsultationPayment from "./Screens/ConsultationPayment";
 
 import PaymentSuccessfull from "./Screens/PaymentSuccessful";
@@ -48,16 +48,12 @@ import ConsultationPaymentcheque from "./Screens/ConsultationPaymentcheque";
 import TimeSelect from "./Screens/TimeSelect";
 import DateSelect from "./Screens/DateSelect";
 
-
+import getandcreate from "./Screens/getandcreate";
 // import king from "./Screens/king";
 
+import invoicehtml from "./Screens/invoicehtml";
 
-// import HomeScreen from './pages/HomeScreen';
-// import RegisterUser from './pages/RegisterUser';
-// import UpdateUser from './pages/UpdateUser';
-// import ViewUser from './pages/ViewUser';
-// import ViewAllUser from './pages/ViewAllUser';
-// import DeleteUser from './pages/DeleteUser';
+import pdfsave from "./Screens/App";
 
 
 const Stack = createStackNavigator();
@@ -67,108 +63,39 @@ const App = () => {
 
   return(
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="SignInScreen"
+    <Stack.Navigator initialRouteName="pdfsave"
       screenOptions={{headerShown:false}}>
 
-{/* 
+
+
+
 <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{
-            title: 'Home', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="View"
-          component={ViewUser}
-          options={{
-            title: 'View User', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="ViewAll"
-          component={ViewAllUser}
-          options={{
-            title: 'View Users', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Update"
-          component={UpdateUser}
-          options={{
-            title: 'Update User', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Register"
-          component={RegisterUser}
-          options={{
-            title: 'Register User', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Delete"
-          component={DeleteUser}
-          options={{
-            title: 'Delete User', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        /> */}
+        name="pdfsave"
+        component={pdfsave}
+      />
 
 
 
 
+<Stack.Screen
+        name="invoicehtml"
+        component={invoicehtml}
+      />
 
-{/* <Stack.Screen
-        name="king"
-        component={king}
-      /> */}
+<Stack.Screen
+        name="Closingbalance"
+        component={Closingbalance}
+      />
 
+<Stack.Screen
+        name="getandcreate"
+        component={getandcreate}
+      />
 
-
-
-
+<Stack.Screen
+        name="OpeningBalance"
+        component={OpeningBalance}
+      />
 
 <Stack.Screen
         name="TimeSelect"

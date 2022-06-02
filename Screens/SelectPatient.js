@@ -143,12 +143,13 @@ function Item({ item }) {
 
 
           console.log(responseOne.data.result);
-          console.log(patient[0].patientId);
+        
           console.log(patient);
           console.log(mrNum)
 
         })).catch(errors => {
           console.log(errors)
+          alert('No Result found , Please Input Valid Information')
     
       }).then(() => setLoading(false))
     
