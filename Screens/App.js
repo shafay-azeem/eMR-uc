@@ -14,6 +14,7 @@ import {
 // Import HTML to PDF
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import RNFetchBlob from 'rn-fetch-blob'
+import FileViewer from "react-native-file-viewer";
 const App = () => {
   const [filePath, setFilePath] = useState('');
  
@@ -146,38 +147,25 @@ console.log(time,'time')
             catch(err) {
                 console.log('hello =---= 3 '+err)
             }  
-      }
+           console.log(filePath1,'filepath122')
+            FileViewer.open(filePath1)
+            .then(() => {
+            console.log('success')
+            // success
+            })
+            .catch(error => {
+            // error
+            console.log('Error viewing document', error)
+            })
+  
+     
+          }
+
+ 
 
 
 
 
-
-    // if (await isPermitted()) {
-    //   let options = {
-    //     //Content to print
-    //     html:
-    //       '<h1 style="text-align: center;"><strong>Hello Guys</strong></h1><p style="text-align: center;">Here is an example of pdf Print in React Native</p><p style="text-align: center;"><strong>Team About React</strong></p>',
-    //     //File Name
-    //     fileName: 'test',
-    //     directory: 'Download',
-    //     base64: true
-    //   };
-    //   let file = await RNHTMLtoPDF.convert(options);
-    //   console.log(file.filePath);
-    //   setFilePath(file.filePath);
-
-
-    //   let filePath1 = RNFetchBlob.fs.dirs.DownloadDir + '/testPDF.pdf';
-    //   console.log(filePath1,'kill')
-        
-    //   RNFetchBlob.fs.writeFile(filePath1, file.base64, 'base64')
-    //       .then(response => {
-    //           console.log('Success Log: ', response);
-    //       })
-    //       .catch(errors => {
-    //           console.log(" Error Log: ", errors);
-    //       })
-    // }
   };
  
   return (

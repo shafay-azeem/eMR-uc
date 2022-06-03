@@ -137,7 +137,7 @@ const SignInScreen = ({ navigation }) => {
               {/* <View style={styles.inputViewLarge} > */}
               <TextInput  
               style={[styles.Edittext,styles.MontserratSemiBold,{  width:450}]}
-              placeholder="@ecample.edu.pk" 
+              placeholder="@aku.edu" 
               placeholderTextColor="#3FB39B"
               value={Email}
               autoCorrect={false}
