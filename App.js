@@ -63,7 +63,7 @@ const App = () => {
 
   return(
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="pdfsave"
+    <Stack.Navigator initialRouteName="SignInScreen"
       screenOptions={{headerShown:false}}>
 
 
